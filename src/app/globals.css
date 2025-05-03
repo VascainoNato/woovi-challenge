@@ -24,3 +24,18 @@ body {
   color: var(--foreground);
   font-family: var(--font-nunito), sans-serif;
 }
+
+@keyframes pulseSlow {
+  0%, 100% {
+    transform: scale(1);
+    color: #1e3a8a;
+  }
+  50% {
+    transform: scale(1.10);
+    color: #03d69d; 
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 4s ease-in-out infinite;
+}
