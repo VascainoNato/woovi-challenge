@@ -3,8 +3,8 @@ import Logo from '../public/challenge.png';
 
 export default function Header() {
     return (
-        <header className="h-22.5 text-white border border-gray-200">
-            <div className="flex items-center pr-20 pl-20 w-full">
+        <header className="h-20 text-white border border-gray-200">
+            <div className="flex items-center h-20 pr-20 pl-20 w-full">
                 <Image
                     src={Logo}
                     alt="Logo"
