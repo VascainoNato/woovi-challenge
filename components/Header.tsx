@@ -8,7 +8,7 @@ export default function Header() {
     const [showModal, setShowModal] = useState(false);
         return (
             <>
-            <header className="h-35 text-white border border-gray-200 md:h-20">
+            <header className="h-35 text-white border-b border-gray-200 md:h-20">
                 <div className="flex flex-col items-center h-35 pr-4 pl-4 w-full gap-2 md:flex md:flex-row md:h-20 md:pl-10 md:pr-10 md:justify-between md:gap-0 xl:pr-20 xl:pl-20">
                     <div className="flex items-center">
                         <Image
