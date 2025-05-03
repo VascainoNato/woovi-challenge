@@ -4,9 +4,11 @@ import Planner from "../../components/Planner";
 
 export default function Home() {
   return (
-    <div className="flex-col h-screen w-full">
+    <div className="flex flex-col min-h-screen w-full">
       <Header/>   
-      <Planner/>
+        <main className="flex-1">
+        <Planner/>
+        </main>
       <Footer/>
      </div>
   );
