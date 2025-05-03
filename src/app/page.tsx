@@ -4,7 +4,7 @@ import Planner from "../../components/Planner";
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex h-screen">
       <Header/>   
       <Planner/>
       <Footer/>
