@@ -1,15 +1,27 @@
+'use client'
 import Image from "next/image";
 import add from "../public/add.png";
 import info from "../public/info.png";
+import { useFlowStore } from "../stores/useFlowStore";
+import { useCreateNode } from "../hooks/useCreateNode";
+import Workflow from "./Workflow";
 
 export default function Planner() {
+  const { addNode } = useFlowStore();
+  const createNode = useCreateNode();
+
+  const handleAddWorkflow = () => {
+    const webhookNode = createNode("webhook");
+    addNode(webhookNode);
+  };
+
   return (
     <div className="relative flex-1 min-h-[calc(100vh-200px)] flex w-full">
       <div
         className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-10 pointer-events-none select-none"
         style={{ backgroundImage: "url('/watermark.png')" }}
       />
-      <div className="relative z-10 w-full flex pr-4 pl-4 pt-4 md:pl-10 md:pr-10 md:pt-10 xl:pr-20 xl:pl-20 xl:pt-6">
+      <div className="relative z-10 w-full flex pr-4 pl-4 pt-4 md:pl-10 md:pr-10 md:pt-10 md:pb-10 dxl:pr-20 xl:pl-20 xl:pb-20 xl:pt-6">
         <div className="flex flex-col w-full">
           <div className="flex pb-6 items-center">
             <Image
@@ -19,7 +31,7 @@ export default function Planner() {
             />
            <span className="text-sm transition duration-[800ms] ease hover:scale-101">Para começar, clique no botão abaixo e configure o seu Workflow.</span>
           </div>
-          <button className="flex w-36 border-blue-900 border items-center pr-3 pl-1 pt-1 pb-1 rounded transition duration-[800ms] ease hover:scale-105 cursor-pointer gap">
+          <button className="flex w-36 border-blue-900 border items-center pr-3 pl-1 pt-1 pb-1 rounded transition duration-[800ms] ease hover:scale-105 cursor-pointer gap" onClick={handleAddWorkflow}>
             <Image
               src={add}
               alt="Add"
@@ -27,6 +39,9 @@ export default function Planner() {
             />
             <span className="text-sm">Novo Workflow</span>
           </button>
+          <div className="relative z-10 pt-6">
+            <Workflow />
+          </div>
         </div>
       </div>
     </div>
