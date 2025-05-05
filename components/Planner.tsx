@@ -21,7 +21,7 @@ export default function Planner() {
         className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-10 pointer-events-none select-none"
         style={{ backgroundImage: "url('/watermark.png')" }}
       />
-      <div className="relative z-10 w-full flex pr-4 pl-4 pt-4 md:pl-10 md:pr-10 md:pt-10 md:pb-10 dxl:pr-20 xl:pl-20 xl:pb-20 xl:pt-6">
+      <div className="relative z-10 w-full flex pr-4 pl-4 pt-4 md:pl-10 md:pr-10 md:pt-5 md:pb-10 xl:pr-20 xl:pl-20 xl:pb-20 xl:pt-10">
         <div className="flex flex-col w-full">
           <div className="flex pb-6 items-center">
             <Image
