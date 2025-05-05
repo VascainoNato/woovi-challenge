@@ -22,13 +22,15 @@ export default function Header() {
                     <div className="flex items-center gap-6">
                         <h1 className="text-blue-900 transition cursor-pointer animate-pulse-slow font-semibold" onClick={() => setShowModal(true)}>Challenge</h1>
                         <h1 className="text-blue-900 transition duration-[800ms] ease hover:scale-105 cursor-pointer font-semibold">Vídeo Explicativo</h1>
-                        <Image
-                            src={Github}
-                            alt="GitHub Logo"
-                            className='hidden md:flex md:w-12 transition duration-[800ms] ease hover:scale-105 cursor-pointer'
-                        >
-                        </Image>
-                        <h1 className="text-blue-900 transition duration-[800ms] ease hover:scale-105 cursor-pointer font-semibold md:hidden">Github</h1>
+                        <a href="https://github.com/VascainoNato/woovi-challenge" target='_blank' rel="noopener noreferrer">
+                            <Image
+                                src={Github}
+                                alt="GitHub Logo"
+                                className='hidden md:flex md:w-12 transition duration-[800ms] ease hover:scale-105 cursor-pointer'
+                            >
+                            </Image>
+                            <h1 className="text-blue-900 transition duration-[800ms] ease hover:scale-105 cursor-pointer font-semibold md:hidden">Github</h1>
+                        </a>
                     </div>
                 </div>
             </header>
