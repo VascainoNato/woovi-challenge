@@ -36,6 +36,9 @@ body {
   }
 }
 
+.woovie-color{
+  background-color: #03d69d; 
+}
 .animate-pulse-slow {
   animation: pulseSlow 4s ease-in-out infinite;
 }
