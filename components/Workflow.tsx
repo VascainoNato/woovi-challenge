@@ -17,7 +17,7 @@ export default function Workflow() {
 
   return (
     <ReactFlowProvider>
-      <div className="h-[70vh] w-full border rounded-md overflow-hidden">
+      <div className="h-[54vh] md:h-[60vh] w-full border rounded-md overflow-hidden">
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -27,7 +27,7 @@ export default function Workflow() {
           nodeTypes={nodeTypes}
           fitView
         >
-          <MiniMap />
+          <MiniMap className="hidden md:flex"/>
           <Controls />
           <Background />
         </ReactFlow>
