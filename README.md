@@ -14,14 +14,9 @@ Produção: https://woovi-challenge-cyan.vercel.app/
 EN:
 > Clone the repository to a local folder;
 > Navigate to the local folder;
-> Run the command: npm install;
-> npm run dev
-# or
-> yarn dev
-# or
-> pnpm dev
-> # or
-bun dev
+> Run the command:
+> npm install || yarn add;
+> npm run dev || yarn dev || pnpm dev || bun dev.
 Open in your browser:
 [http://localhost:3000](http://localhost:3000) 
 
@@ -31,15 +26,9 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 PT-BR
 > Faça o clone do repositório em alguma pasta local;
 > Navegue até a pasta local;
-> Rode o comando: npm install;
-> npm run dev
-# ou
-> yarn dev
-# ou
-> pnpm dev
-> # ou
-bun dev
-
+> Rode o comando:
+> npm install || yarn add;
+> npm run dev || yarn dev || pnpm dev || bun dev.
 Abra no seu navegador:
 [http://localhost:3000](http://localhost:3000) 
 
