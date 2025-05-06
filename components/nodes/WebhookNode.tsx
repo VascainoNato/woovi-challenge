@@ -4,11 +4,12 @@ import close from "../../public/close-white.png";
 import Image from "next/image";
 import { WebhookNodeProps } from "../../types/webhook";
 
-export default function WebhookNode({ id }: WebhookNodeProps) {
+export default function WebhookNode({ id, data }: WebhookNodeProps) {
   const { deleteNode } = useFlowStore();
+  const isEntry = data?.isEntry;
   return (
     <div className="woovie-color border border-gray-500 rounded shadow-md min-w-[100px] pb-0.5">
-      <span className="text-white text-xs w-full pl-2">Webhook</span>
+      <span className="text-white text-xs w-full pl-2">Webhook {isEntry ? '(Início)' : ''}</span>
       <button
         onClick={() => deleteNode(id)}
         className="absolute top-0 right-0.5 text-white rounded-bl"
@@ -22,9 +23,14 @@ export default function WebhookNode({ id }: WebhookNodeProps) {
       
       </button>
       <Handle
+        type="target"
+        position={Position.Left}
+        className="w-3 h-3 bg-blue-700"
+      />
+      <Handle
         type="source"
         position={Position.Right}
-        className="w-3 h-3 bg-blue-900 rounded-full"
+        className="w-3 h-3 bg-blue-700"
       />
     </div>
   );
