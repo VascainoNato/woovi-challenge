@@ -17,7 +17,7 @@ export default function Workflow() {
 
   return (
     <ReactFlowProvider>
-      <div className="h-[54vh] md:h-[60vh] w-full border rounded-md overflow-hidden">
+      <div className="h-[54vh] md:h-[60vh] w-full border border-gray-200 rounded-md overflow-hidden">
         <ReactFlow
           nodes={nodes}
           edges={edges}
