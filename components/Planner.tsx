@@ -5,14 +5,21 @@ import info from "../public/info.png";
 import { useFlowStore } from "../stores/useFlowStore";
 import { useCreateNode } from "../hooks/useCreateNode";
 import Workflow from "./Workflow";
+import { useState } from "react";
 
 export default function Planner() {
   const { addNode } = useFlowStore();
   const createNode = useCreateNode();
+  const [showOptions, setShowOptions] = useState(false);
 
   const handleAddWorkflow = () => {
-    const webhookNode = createNode("webhook");
-    addNode(webhookNode);
+    setShowOptions((prev) => !prev);
+  };
+
+  const handleSelectType = (type: "webhook" | "api") => {
+    const node = createNode(type);
+    addNode(node);
+    setShowOptions(false); 
   };
 
   return (
@@ -39,6 +46,22 @@ export default function Planner() {
             />
             <span className="text-sm">Novo Workflow</span>
           </button>
+          {showOptions && (
+            <div className="absolute mt-24 w-36 bg-white border border-blue-200 rounded shadow-md flex flex-col z-50">
+              <button
+                onClick={() => handleSelectType("webhook")}
+                className="px-4 py-2 text-sm text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer"
+              >
+                Webhook
+              </button>
+              <button
+                onClick={() => handleSelectType("api")}
+                className="px-4 py-2 text-sm text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer"
+              >
+                API
+              </button>
+            </div>
+          )}
           <div className="relative z-10 pt-6">
             <Workflow />
           </div>
