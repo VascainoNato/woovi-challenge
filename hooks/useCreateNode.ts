@@ -2,7 +2,7 @@ import { Node } from "react-flow-renderer";
 import { v4 as uuidv4 } from "uuid";
 
 export function useCreateNode() {
-  return (type: "webhook" | "api"): Node => ({
+  return (type: "webhook" | "api" | "if"): Node => ({
     id: uuidv4(),
     type,
     position: {
