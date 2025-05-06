@@ -16,7 +16,7 @@ export default function WebhookNode({ id }: WebhookNodeProps) {
       <Image
         src={close}
         alt="Close"
-        className="w-4"
+        className="w-4 cursor-pointer"
       >
       </Image>
       
