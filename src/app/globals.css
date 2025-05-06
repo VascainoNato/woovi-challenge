@@ -42,3 +42,6 @@ body {
 .animate-pulse-slow {
   animation: pulseSlow 4s ease-in-out infinite;
 }
+.font-small{
+  font-size: 0.65rem;
+}
