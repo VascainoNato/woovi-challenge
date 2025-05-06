@@ -9,7 +9,7 @@ export default function WebhookNode({ id, data }: WebhookNodeProps) {
   const isEntry = data?.isEntry;
   return (
     <div className="woovie-color border border-gray-500 rounded shadow-md min-w-[100px] pb-0.5">
-      <span className="text-white text-xs w-full pl-2">Webhook {isEntry ? '(Início)' : ''}</span>
+      <span className="text-white font-small w-full pl-1">Webhook {isEntry ? '(Início)' : ''}</span>
       <button
         onClick={() => deleteNode(id)}
         className="absolute top-0 right-0.5 text-white rounded-bl"

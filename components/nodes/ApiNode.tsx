@@ -9,7 +9,7 @@ export default function ApiNode({ id, data }: ApiNodeProps) {
   const isEntry = data?.isEntry;
   return (
     <div className="bg-blue-900 border border-gray-500 rounded shadow-md min-w-[100px] pb-0.5">
-      <span className="text-white text-xs w-full pl-2">API {isEntry ? '(Início)' : ''}</span>
+      <span className="text-white font-small w-full pl-1">API {isEntry ? '(Início)' : ''}</span>
       <button
         onClick={() => deleteNode(id)}
         className="absolute top-0 right-0.5 text-white rounded-bl"
