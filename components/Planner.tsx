@@ -16,7 +16,7 @@ export default function Planner() {
     setShowOptions((prev) => !prev);
   };
 
-  const handleSelectType = (type: "webhook" | "api"| "if") => {
+  const handleSelectType = (type: "webhook" | "api"| "if" | "message") => {
     const node = createNode(type);
     addNode(node);
     setShowOptions(false); 
@@ -65,6 +65,12 @@ export default function Planner() {
                 className="px-4 py-2 text-sm text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer"
               >
                 If
+              </button>
+              <button
+                onClick={() => handleSelectType("message")}
+                className="px-4 py-2 text-sm text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer"
+              >
+                Mensagem
               </button>
             </div>
           )}
