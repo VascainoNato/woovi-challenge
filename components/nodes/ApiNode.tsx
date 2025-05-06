@@ -1,9 +1,26 @@
 import { Handle, Position } from "react-flow-renderer";
+import { useFlowStore } from "../../stores/useFlowStore";
+import Image from "next/image";
+import close from "../../public/close-white.png";
+import { ApiNodeProps } from "../../types/api";
 
-export default function ApiNode() {
+export default function ApiNode({ id }: ApiNodeProps) {
+  const { deleteNode } = useFlowStore();
   return (
-    <div className="woovie-color border border-gray-500 rounded shadow-md min-w-[100px] pb-0.5">
+    <div className="bg-blue-900 border border-gray-500 rounded shadow-md min-w-[100px] pb-0.5">
       <span className="text-white text-xs w-full pl-2">API</span>
+      <button
+        onClick={() => deleteNode(id)}
+        className="absolute top-0 right-0.5 text-white rounded-bl"
+      >
+      <Image
+        src={close}
+        alt="Close"
+        className="w-4 cursor-pointer"
+      >
+      </Image>
+      
+      </button>
       <Handle
         type="target"
         position={Position.Left}
