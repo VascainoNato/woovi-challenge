@@ -7,7 +7,6 @@ import { useEffect } from "react";
 
 export default function Workflow() {
   const { nodes, edges, setNodes, setEdges } = useFlowStore();
-
   const onNodesChange = (changes: NodeChange[]) => {
     const updatedNodes = applyNodeChanges(changes, nodes);
     if (JSON.stringify(updatedNodes) !== JSON.stringify(nodes)) {
@@ -24,8 +23,22 @@ export default function Workflow() {
     }
   };
 
-  const onConnect = (connection: Connection) =>
-    setEdges((prev) => addEdge(connection, prev));
+  const onConnect = (connection: Connection) => {
+    const { sourceHandle } = connection;
+    const edgeColor =
+      sourceHandle === 'true'
+        ? '#22c55e'
+        : sourceHandle === 'false'
+        ? '#ef4444' 
+        : '#1a202c'; 
+
+    const edge = {
+      ...connection,
+      style: { stroke: edgeColor },
+    };
+
+    setEdges((prev) => addEdge(edge, prev));
+  };
 
   useEffect(() => {
     const updatedNodes = markFirstEntryNode(nodes, edges);
