@@ -2,6 +2,7 @@
 import ReactFlow, { addEdge, applyEdgeChanges, applyNodeChanges, Background, Connection, Controls, EdgeChange, MiniMap, NodeChange, ReactFlowProvider } from "react-flow-renderer";
 import { useFlowStore } from "../stores/useFlowStore";
 import { nodeTypes } from "../stores/nodeTypes";
+import { useEffect } from "react";
 
 export default function Workflow() {
   const { nodes, edges, setNodes, setEdges } = useFlowStore();
@@ -14,6 +15,18 @@ export default function Workflow() {
 
   const onConnect = (connection: Connection) =>
     setEdges((prev) => addEdge(connection, prev));
+
+  useEffect(() => {
+    const targets = edges.map((e) => e.target);
+    const updatedNodes = nodes.map((node) => ({
+      ...node,
+      data: {
+        ...node.data,
+        isEntry: !targets.includes(node.id),
+      },
+    }));
+    setNodes(updatedNodes);
+  }, [edges]);
 
   return (
     <ReactFlowProvider>
