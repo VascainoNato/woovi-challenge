@@ -36,7 +36,7 @@ export default function Planner() {
               alt="info"
               className="w-10 transition duration-[800ms] ease hover:scale-105"
             />
-           <span className="text-sm transition duration-[800ms] ease hover:scale-101">Para começar, clique no botão abaixo e configure o seu Workflow.</span>
+           <span className="text-sm transition duration-[800ms] ease hover:scale-101">To get started, click the button below and set up your Workflow.</span>
           </div>
           <button className="flex w-34 border-blue-900 border items-center pr-3 pl-1 pt-1 pb-1 rounded transition duration-[800ms] ease hover:scale-105 cursor-pointer gap" onClick={handleAddWorkflow}>
             <Image
@@ -44,7 +44,7 @@ export default function Planner() {
               alt="Add"
               className="w-6 h-6"
             />
-            <span className="text-sm">Adicionar Item</span>
+            <span className="text-sm">Add Item</span>
           </button>
           {showOptions && (
             <div className="absolute mt-24 w-34 bg-white border border-blue-200 rounded shadow-md flex flex-col z-50">
@@ -70,7 +70,7 @@ export default function Planner() {
                 onClick={() => handleSelectType("message")}
                 className="px-4 py-2 text-sm text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer"
               >
-                Mensagem
+                Message
               </button>
             </div>
           )}
